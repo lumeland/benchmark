@@ -1,0 +1,16 @@
+.DS_Store
+
+ssg/eleventy/node_modules
+ssg/eleventy/_site
+ssg/eleventy/pages/*.md
+ssg/eleventy/package-lock.json
+
+ssg/hugo/content/pages/
+ssg/hugo/public/
+
+ssg/jekyll/.jekyll-cache
+ssg/jekyll/_pages
+ssg/jekyll/_site
+
+ssg/lume/_site
+ssg/lume/pages/*.md
