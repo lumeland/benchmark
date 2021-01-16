@@ -25,11 +25,13 @@ To run the benchmark: `deno run --unstable -A cli.js`. You can add some options:
 ### Small sites (100 pages)
 
 ```
+deno run --unstable -A cli.js --pages 100
+
 SITES WITH 100 PAGES:
 (10 runs)
 
 ┌───────┬────────────┬─────────┬──────────────┐
-│ (idx) │    name    │ seconds │    speed     │
+│ (idx) │    name    │ seconds │   duration   │
 ├───────┼────────────┼─────────┼──────────────┤
 │   0   │    hugo    │  0.169  │  ▓░░░░░░░░░  │
 │   1   │    lume    │  0.777  │  ▓▓▓▓▓░░░░░  │
@@ -38,14 +40,16 @@ SITES WITH 100 PAGES:
 └───────┴────────────┴─────────┴──────────────┘
 ```
 
-### Medium sites (1000 pages)
+### Medium sites (1,000 pages)
 
 ```
+deno run --unstable -A cli.js --pages 1000
+
 SITES WITH 1000 PAGES:
 (10 runs)
 
 ┌───────┬────────────┬─────────┬──────────────┐
-│ (idx) │    name    │ seconds │    speed     │
+│ (idx) │    name    │ seconds │   duration   │
 ├───────┼────────────┼─────────┼──────────────┤
 │   0   │    hugo    │  0.867  │  ▓▓▓░░░░░░░  │
 │   1   │    lume    │  1.634  │  ▓▓▓▓▓▓░░░░  │
@@ -54,14 +58,16 @@ SITES WITH 1000 PAGES:
 └───────┴────────────┴─────────┴──────────────┘
 ```
 
-### Big sites (10000 pages)
+### Big sites (10,000 pages)
 
 ```
+deno run --unstable -A cli.js --pages 10000
+
 SITES WITH 10000 PAGES:
 (10 runs)
 
 ┌───────┬────────────┬─────────┬──────────────┐
-│ (idx) │    name    │ seconds │    speed     │
+│ (idx) │    name    │ seconds │   duration   │
 ├───────┼────────────┼─────────┼──────────────┤
 │   0   │    hugo    │ 10.519  │  ▓▓▓▓░░░░░░  │
 │   1   │   jekyll   │  15.84  │  ▓▓▓▓▓▓░░░░  │

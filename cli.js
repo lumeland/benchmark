@@ -68,7 +68,7 @@ async function cli(args) {
 
   final.forEach((data) => {
     const percentage = Math.round((data.seconds / slower) * 10);
-    data.speed = "▓".repeat(percentage) + "░".repeat(10 - percentage);
+    data.duration = "▓".repeat(percentage) + "░".repeat(10 - percentage);
   })
 
   console.table(final);
