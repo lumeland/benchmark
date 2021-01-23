@@ -7,9 +7,6 @@ jobs:
   run:
     name: Run
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        operating-system: [ubuntu-latest, windows-latest]
     steps:
     - name: Checkout
       uses: actions/checkout@master
@@ -23,7 +20,7 @@ jobs:
     - name: Setup Hugo
       uses: peaceiris/actions-hugo@v2
 
-    - name: Set Deno
+    - name: Setup Deno
       uses: denolib/setup-deno@v2
 
     - name: Install eleventy
@@ -35,6 +32,7 @@ jobs:
       run: |
         cd ssg/jekyll
         gem install bundler
+        bundle update --bundler
         bundle install
 
     - name: Run the benchmarks
