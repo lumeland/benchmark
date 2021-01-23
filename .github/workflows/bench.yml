@@ -40,8 +40,8 @@ jobs:
       run: |
         cd ssg/jekyll
         gem install bundler
-        bundle config path vendor/bundle
         bundle update --bundler
+        bundle config path vendor/bundle
         bundle install
 
     - name: Install lume
