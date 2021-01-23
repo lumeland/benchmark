@@ -5,7 +5,7 @@ const runners = new Set();
 runners.add(
   new Runner({
     name: "lume",
-    build: ["lume"],
+    build: ["deno", "run", "-A", "--unstable", "https://deno.land/x/lume@v0.13.2/cli.js"],
     content: "pages",
     output: "_site",
   }),
