@@ -28,10 +28,19 @@ jobs:
         cd ssg/eleventy
         npm install
 
+    - name: Cache Ruby Bundler
+      uses: actions/cache@v2
+      with:
+        path: vendor/bundle
+        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-gems-
+
     - name: Install Jekyll
       run: |
         cd ssg/jekyll
         gem install bundler
+        bundle config path vendor/bundle
         bundle update --bundler
         bundle install
 
@@ -42,3 +51,6 @@ jobs:
     - name: Run the benchmarks
       run: |
         deno run --unstable -A cli.js --pages 1
+        deno run --unstable -A cli.js --pages 10
+        deno run --unstable -A cli.js --pages 100
+        deno run --unstable -A cli.js --pages 1000
