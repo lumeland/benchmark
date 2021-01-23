@@ -35,6 +35,10 @@ jobs:
         bundle update --bundler
         bundle install
 
+    - name: Install lume
+      run: |
+        deno install -A --unstable https://deno.land/x/lume@v0.13.2/cli.js
+
     - name: Run the benchmarks
       run: |
         deno run --unstable -A cli.js --pages 1
