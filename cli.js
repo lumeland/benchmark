@@ -1,8 +1,8 @@
-import { parse } from "https://deno.land/std@0.83.0/flags/mod.ts";
+import { parse } from "https://deno.land/std@0.98.0/flags/mod.ts";
 import {
   bench,
   runBenchmarks,
-} from "https://deno.land/std@0.83.0/testing/bench.ts";
+} from "https://deno.land/std@0.98.0/testing/bench.ts";
 import runners from "./config.js";
 
 async function cli(args) {
