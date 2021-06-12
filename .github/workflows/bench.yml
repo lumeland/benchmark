@@ -16,6 +16,8 @@ jobs:
 
     - name: Setup Ruby
       uses: ruby/setup-ruby@v1
+      with:
+        ruby-version: 2.6
 
     - name: Setup Hugo
       uses: peaceiris/actions-hugo@v2
