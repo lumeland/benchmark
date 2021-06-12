@@ -18,6 +18,8 @@ jobs:
       uses: ruby/setup-ruby@v1
       with:
         ruby-version: 2.6
+        working-directory: ssg/jekyll
+        bundler-cache: true
 
     - name: Setup Hugo
       uses: peaceiris/actions-hugo@v2
@@ -29,22 +31,6 @@ jobs:
       run: |
         cd ssg/eleventy
         npm install
-
-    - name: Cache Ruby Bundler
-      uses: actions/cache@v2
-      with:
-        path: vendor/bundle
-        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
-        restore-keys: |
-          ${{ runner.os }}-gems-
-
-    - name: Install Jekyll
-      run: |
-        cd ssg/jekyll
-        gem install bundler
-        bundle update --bundler
-        bundle config path vendor/bundle
-        bundle install
 
     - name: Install lume
       run: |
