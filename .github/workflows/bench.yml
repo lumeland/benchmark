@@ -21,7 +21,7 @@ jobs:
       uses: peaceiris/actions-hugo@v2
 
     - name: Setup Deno
-      uses: denolib/setup-deno@v2
+      uses: denoland/setup-deno@v1
 
     - name: Install eleventy
       run: |
@@ -46,7 +46,7 @@ jobs:
 
     - name: Install lume
       run: |
-        deno install -A --unstable https://deno.land/x/lume@v0.13.2/cli.js
+        deno run -A https://deno.land/x/lume/install.js
 
     - name: Run the benchmarks
       run: |
@@ -54,3 +54,4 @@ jobs:
         deno run --unstable -A cli.js --pages 10
         deno run --unstable -A cli.js --pages 100
         deno run --unstable -A cli.js --pages 1000
+        deno run --unstable -A cli.js --pages 10000
